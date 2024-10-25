@@ -9,6 +9,9 @@
   and print the total sum.
 
   Part 2: Digits can also be spelled out, like 'one' or 'four'. This should also be accepted.
+
+  Note: I opted not to use C++'s native regex here since it doesn't support overlapping matches
+  and I wanted to stick to native functionality for the time being.
 */
 
 int main()

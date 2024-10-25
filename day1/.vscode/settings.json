@@ -126,6 +126,7 @@
     "algorithm": "cpp",
     "charconv": "cpp",
     "execution": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "map": "cpp"
   }
 }
