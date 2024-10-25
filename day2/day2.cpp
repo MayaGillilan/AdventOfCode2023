@@ -3,6 +3,8 @@
 #include <fstream>
 #include <regex>
 
+#include "day2.h"
+
 #define RED_MAX 12
 #define GREEN_MAX 13
 #define BLUE_MAX 14
@@ -15,20 +17,18 @@
   Part 2 TBD
 */
 
-int main()
+void day2()
 {
-  std::ifstream inputFile("input.txt");
+  std::ifstream inputFile("./day2/input.txt");
 
   if (!inputFile)
   {
-    std::cerr << "Error: File not found\n";
-    return 1;
+    throw std::runtime_error("File not found");
   }
 
   if (!inputFile.is_open())
   {
-    std::cerr << "Error: Failed to open file\n";
-    return 1;
+    throw std::runtime_error("Failed to open file");
   }
 
   std::string currentLine{};
@@ -93,5 +93,5 @@ int main()
     }
   }
 
-  std::cout << "Sum of valid games: " << sum << '\n';
+  std::cout << "DAY 2: Sum of valid games: " << sum << '\n';
 }

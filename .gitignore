@@ -33,3 +33,8 @@
 
 *.vscode
 */build
+*.dSYM
+!*.txt
+!*.cpp
+!*.h
+main

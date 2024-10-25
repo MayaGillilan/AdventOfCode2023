@@ -3,6 +3,8 @@
 #include <fstream>
 #include <map>
 
+#include "day1.h"
+
 /*
   Solves trebuchet problem https://adventofcode.com/2023/day/1 - Given a file with each line containing a jumbled string,
   find the first and last digit of each line and add them together to form a number. Sum the number from each line
@@ -14,20 +16,18 @@
   and I wanted to stick to native functionality for the time being.
 */
 
-int main()
+void day1()
 {
-  std::ifstream inputFile("input.txt");
+  std::ifstream inputFile("./day1/input.txt");
 
   if (!inputFile)
   {
-    std::cerr << "Error: File not found\n";
-    return 1;
+    throw std::runtime_error("File not found");
   }
 
   if (!inputFile.is_open())
   {
-    std::cerr << "Error: Failed to open file\n";
-    return 1;
+    throw std::runtime_error("Failed to open file");
   }
 
   std::string currentLine{};
@@ -61,5 +61,5 @@ int main()
     sum += std::stoi(std::string() + firstDigit + secondDigit, nullptr, 10);
   }
 
-  std::cout << "Sum of each line's first and last digit is: " << sum << '\n';
+  std::cout << "DAY 1: Sum of each line's first and last digit is: " << sum << '\n';
 }
