@@ -14,7 +14,8 @@
   Determines which games are valid based on the highest values of red, green, and blue cubes drawn
   from each game. In each game, a number of random cubes are drawn multiple times then put back.
 
-  Part 2 TBD
+  Part 2: Determine the minimum amount of each color needed in order for each game to be valid. The end result is
+  the power of these games, determined by the minimum number of each color multiplied together.
 */
 
 void day2()
@@ -37,6 +38,7 @@ void day2()
   const std::regex greenMatcher{"([0-9]+)\\sgreen"};
   const std::regex blueMatcher{"([0-9]+)\\sblue"};
   std::string_view gameText{"Game "};
+  long sumOfPowers{};
 
   while (std::getline(inputFile, currentLine))
   {
@@ -91,7 +93,10 @@ void day2()
     {
       sum += gameNumber;
     }
+    sumOfPowers += highestRed * highestBlue * highestGreen;
   }
 
   std::cout << "DAY 2: Sum of valid games: " << sum << '\n';
+
+  std::cout << "DAY 2 PART 2: Sum of powers: " << sumOfPowers << '\n';
 }
